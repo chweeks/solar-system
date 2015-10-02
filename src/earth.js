@@ -3,4 +3,9 @@ function Earth() {
   this.mass = (5.97*Math.pow(10,24));
   this.radius = (6371*Math.pow(10,3));
   this.density = (this.mass/((4/3)*Math.PI*Math.pow(this.radius, 3)))
+  gravConstant = 6.67 * (Math.pow(10, -11))
+};
+
+Earth.prototype.gravField = function(){
+  return (this.mass*gravConstant)/(Math.pow(this.radius,2))
 };

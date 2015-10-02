@@ -23,4 +23,8 @@ describe('Earth', function() {
     expect(earth.position).toEqual([149.6*(Math.pow(10,9)),0]);
   });
 
+  it('has a gravity of 9.8 m/s^2', function() {
+    expect((Math.round((earth.gravField()*10)))/10).toBe(9.8)
+  });
+
 });
