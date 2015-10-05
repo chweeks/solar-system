@@ -19,5 +19,5 @@ Earth.prototype.gravField = function(distance){
 };
 
 Earth.prototype.acceleration = function(sun){
-  return (((sun.gravForceOn(this))/(this.mass)).toFixed(5))
+  return ((sun.gravForceOn(this))/(this.mass))
 };

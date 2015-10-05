@@ -28,7 +28,7 @@ describe('Earth', function() {
   });
 
   it('has centripetal acceleration due to the sun', function(){
-    expect(earth.acceleration(sun)).toBe ((5.93*(Math.pow(10,-3))).toFixed(5))
+    expect(earth.acceleration(sun).toFixed(5)).toBe ((5.93*(Math.pow(10,-3))).toFixed(5))
   });
 
 });
