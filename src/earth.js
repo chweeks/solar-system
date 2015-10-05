@@ -6,6 +6,18 @@ function Earth() {
   gravConstant = 6.67 * (Math.pow(10, -11))
 };
 
+Earth.prototype.mass = function(){
+  this.mass
+};
+
+Earth.prototype.position = function(){
+  this.position
+};
+
 Earth.prototype.gravField = function(distance){
   return ((this.mass)*(gravConstant))/(Math.pow(distance,2))
+};
+
+Earth.prototype.acceleration = function(sun){
+  return (((sun.gravForceOn(this))/(this.mass)).toFixed(5))
 };

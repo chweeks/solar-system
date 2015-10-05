@@ -1,8 +1,10 @@
 describe('Earth', function() {
   var earth;
+  var sun;
 
   beforeEach(function() {
     earth = new Earth();
+    sun = new Sun();
   });
 
   it('instantiated with a mass of earth', function() {
@@ -22,7 +24,11 @@ describe('Earth', function() {
   });
 
   it('has a gravity of 9.8 m/s^2', function() {
-    expect((Math.round((earth.gravField(earth.radius)*10)))/10).toBe(9.8)
+    expect(((earth.gravField(earth.radius))).toFixed(1)).toBe ((9.8).toFixed(1))
+  });
+
+  it('has centripetal acceleration due to the sun', function(){
+    expect(earth.acceleration(sun)).toBe ((5.93*(Math.pow(10,-3))).toFixed(5))
   });
 
 });

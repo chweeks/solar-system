@@ -7,11 +7,11 @@ function Sun() {
 };
 
 Sun.prototype.xDifference = function(planet){
-  return Math.abs((this.position[0]) - (planet.position()[0]))
+  return Math.abs((this.position[0]) - (planet.position[0]))
 };
 
 Sun.prototype.yDifference = function(planet){
-  return Math.abs((this.position[1]) - (planet.position()[1]))
+  return Math.abs((this.position[1]) - (planet.position[1]))
 };
 
 Sun.prototype.distance = function(planet){
@@ -19,5 +19,5 @@ Sun.prototype.distance = function(planet){
 };
 
 Sun.prototype.gravForceOn = function(planet){
-  return ((this.mass*planet.mass()*(gravConstant))/(Math.pow(this.distance(planet),2)))
+  return ((this.mass*planet.mass*(gravConstant))/(Math.pow(this.distance(planet),2)))
 };
