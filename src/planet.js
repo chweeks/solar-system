@@ -35,21 +35,37 @@ Planet.prototype.position = function(){
 };
 
 Planet.prototype.xCoord = function(){
-  return this.orbitalRadius * (Math.cos(this.orbitalAngle))
+  return this.orbitalRadius * (Math.cos(this.orbitAngle))
 };
 
 Planet.prototype.yCoord = function(){
-  return this.orbitalRadius * (Math.sin(this.orbitalAngle))
+  return this.orbitalRadius * (Math.sin(this.orbitAngle))
 };
 
 Planet.prototype.timePeriod = function(sun){
   return (2 * Math.PI * (this.orbitalRadius)/(this.velocity(sun)))
 };
 
-Planet.prototype.addDay = function(){
-  return  this.orbitAngle += ((360/365.25) * (Math.PI / 180))
+Planet.prototype.addDay = function(sun){
+  return  this.orbitAngle += ((360/this.day(sun)) * (Math.PI / 180))
 };
 
-Planet.prototype.addMonth = function(){
-  return  this.orbitAngle += ((360/12) * (Math.PI / 180))
+Planet.prototype.addMonth = function(sun){
+  return  this.orbitAngle += ((360/this.month(sun)) * (Math.PI / 180))
+};
+
+Planet.prototype.addYear = function(sun){
+  return  this.orbitAngle += ((360/this.year(sun)) * (Math.PI / 180))
+};
+
+Planet.prototype.day = function(sun){
+  return this.timePeriod(sun) / (3600*24)
+};
+
+Planet.prototype.month = function(sun){
+  return this.timePeriod(sun) / (3600*24*7*4.35)
+};
+
+Planet.prototype.year = function(sun){
+  return this.timePeriod(sun) / (3600*24*7*52.1429)
 };

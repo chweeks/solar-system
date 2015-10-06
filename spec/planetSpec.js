@@ -40,7 +40,7 @@ describe('Planet', function() {
   });
 
   it('position changes with respect to orbital angle', function(){
-     earth.orbitalAngle = ((270 * Math.PI)/180);
+     earth.orbitAngle = ((270 * Math.PI)/180);
      expect(earth.position()).toEqual([-0, -(earth.orbitalRadius)])
   });
 
@@ -49,18 +49,18 @@ describe('Planet', function() {
   });
 
   it('#addDay adds an arc day to orbit ', function(){
-    earth.addDay()
+    earth.addDay(sun)
     expect((earth.orbitAngle).toFixed(4)).toBe('0.0172')
   });
 
   it('#addMonth adds an arc month to orbit', function(){
-    earth.addMonth()
+    earth.addMonth(sun)
     expect((earth.orbitAngle).toFixed(3)).toBe('0.524')
   });
 
-  it('#addMonth adds an arc month to orbit', function(){
-    earth.addMonth()
-    expect((earth.orbitAngle).toFixed(3)).toBe('0.524')
+  it('#addYear adds an arc year to orbit', function(){
+    earth.addYear(sun)
+    expect((earth.orbitAngle).toPrecision(2)).toBe((360 * Math.PI / 180).toPrecision(2))
   });
 
 });
