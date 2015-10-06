@@ -42,3 +42,7 @@ Earth.prototype.yCoord = function(){
 Earth.prototype.addDay = function(){
   return  this.orbitAngle += ((360/365.25) * (Math.PI / 180))
 };
+
+Earth.prototype.addMonth = function(){
+  return  this.orbitAngle += ((360/12) * (Math.PI / 180))
+};
