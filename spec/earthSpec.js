@@ -24,7 +24,7 @@ describe('Earth', function() {
   });
 
   it('instantiated with an orbit angle of 180 degrees', function(){
-    expect(earth.orbitAngle).toBe(180)
+    expect(earth.orbitAngle).toBe(0)
   })
 
   it('has a gravity of 9.8 m/s^2', function() {
@@ -37,6 +37,11 @@ describe('Earth', function() {
 
   it('has an orbital speed around the sun', function() {
     expect((earth.velocity(sun)).toFixed(0)).toBe ('29787')
+  });
+
+  it('position chenges with respect to orbital angle', function(){
+     earth.orbitalAngle = ((270 * Math.PI)/180);
+     expect(earth.position()).toEqual([-0, -(earth.orbitalRadius)])
   });
 
 });

@@ -1,8 +1,8 @@
 function Earth() {
-  this.orbitAngle = 180
+  this.orbitAngle = (0)
   this.orbitalRadius = 149.6 * (Math.pow(10,9));
-  this.mass = (5.97 * Math.pow(10,24));
-  this.radius = (6371 * Math.pow(10,3));
+  this.mass = 5.97 * (Math.pow(10,24));
+  this.radius = 6371 * (Math.pow(10,3));
   this.density = (this.mass/((4/3)*Math.PI*Math.pow(this.radius, 3)))
   gravConstant = 6.67 * (Math.pow(10, -11))
 };
@@ -25,4 +25,16 @@ Earth.prototype.acceleration = function(sun){
 
 Earth.prototype.velocity = function(sun){
   return (Math.sqrt((this.acceleration(sun))*(this.orbitalRadius)))
-}
+};
+
+Earth.prototype.position = function(){
+  return [Math.round(this.xCoord()),Math.round(this.yCoord())]
+};
+
+Earth.prototype.xCoord = function(){
+  return this.orbitalRadius * (Math.cos(this.orbitalAngle))
+};
+
+Earth.prototype.yCoord = function(){
+  return this.orbitalRadius * (Math.sin(this.orbitalAngle))
+};
