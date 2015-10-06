@@ -31,4 +31,8 @@ describe('Earth', function() {
     expect(earth.acceleration(sun).toFixed(5)).toBe ((5.93*(Math.pow(10,-3))).toFixed(5))
   });
 
+  it('has an orbital speed around the sun', function() {
+    expect((earth.velocity(sun)).toFixed(0)).toBe ('29787')
+  });
+
 });
