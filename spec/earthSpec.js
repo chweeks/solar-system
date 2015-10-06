@@ -44,4 +44,9 @@ describe('Earth', function() {
      expect(earth.position()).toEqual([-0, -(earth.orbitalRadius)])
   });
 
+  it('#addDay adds on arc day to orbit', function(){
+    earth.addDay()
+    expect((earth.orbitAngle).toFixed(4)).toBe('0.0172')
+  });
+
 });
