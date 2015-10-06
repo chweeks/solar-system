@@ -1,52 +1,55 @@
-function Earth() {
+function Planet(mass, radius, orbitalRadius) {
   this.orbitAngle = (0)
-  this.orbitalRadius = 149.6 * (Math.pow(10,9));
-  this.mass = 5.97 * (Math.pow(10,24));
-  this.radius = 6371 * (Math.pow(10,3));
-  this.density = (this.mass/((4/3)*Math.PI*Math.pow(this.radius, 3)))
-  gravConstant = 6.67 * (Math.pow(10, -11))
+  this.orbitalRadius = orbitalRadius;
+  this.mass = mass;
+  this.radius = radius;
+  gravConstant = 6.67e-11
 };
 
-Earth.prototype.mass = function(){
+Planet.prototype.mass = function(){
   this.mass
 };
 
-Earth.prototype.orbitalRadius = function(){
+Planet.prototype.orbitalRadius = function(){
   this.orbitalRadius
 };
 
-Earth.prototype.gravField = function(distance){
+Planet.prototype.density = function(){
+  return (this.mass/((4/3)*Math.PI*Math.pow(this.radius, 3)))
+};
+
+Planet.prototype.gravField = function(distance){
   return ((this.mass)*(gravConstant))/(Math.pow(distance,2))
 };
 
-Earth.prototype.acceleration = function(sun){
+Planet.prototype.acceleration = function(sun){
   return ((sun.gravForceOn(this))/(this.mass))
 };
 
-Earth.prototype.velocity = function(sun){
+Planet.prototype.velocity = function(sun){
   return (Math.sqrt((this.acceleration(sun))*(this.orbitalRadius)))
 };
 
-Earth.prototype.position = function(){
+Planet.prototype.position = function(){
   return [Math.round(this.xCoord()),Math.round(this.yCoord())]
 };
 
-Earth.prototype.xCoord = function(){
+Planet.prototype.xCoord = function(){
   return this.orbitalRadius * (Math.cos(this.orbitalAngle))
 };
 
-Earth.prototype.yCoord = function(){
+Planet.prototype.yCoord = function(){
   return this.orbitalRadius * (Math.sin(this.orbitalAngle))
 };
 
-Earth.prototype.timePeriod = function(sun){
+Planet.prototype.timePeriod = function(sun){
   return (2 * Math.PI * (this.orbitalRadius)/(this.velocity(sun)))
 };
 
-Earth.prototype.addDay = function(){
+Planet.prototype.addDay = function(){
   return  this.orbitAngle += ((360/365.25) * (Math.PI / 180))
 };
 
-Earth.prototype.addMonth = function(){
+Planet.prototype.addMonth = function(){
   return  this.orbitAngle += ((360/12) * (Math.PI / 180))
 };

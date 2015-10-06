@@ -4,7 +4,7 @@ describe('Sun', function() {
 
   beforeEach(function() {
     sun = new Sun();
-    earth = new Earth();
+    earth = new Planet(5.97e24, 6371e3, 149.6e9);
   });
 
   it('instantiated at the centre of the system', function(){
@@ -12,11 +12,11 @@ describe('Sun', function() {
   })
 
   it('instantiated with mass of sun', function() {
-    expect(sun.mass).toBe(1.99 * Math.pow(10,30));
+    expect(sun.mass).toBe(1.99e30);
   });
 
   it('instantiated with radius of sun', function() {
-    expect(sun.radius).toBe(696000000);
+    expect(sun.radius).toBe(696e6);
   });
 
   it('instantiated with density of sun', function() {
@@ -24,11 +24,11 @@ describe('Sun', function() {
   });
 
   it('#distance calculated between two bodies', function(){
-    expect(sun.distance(earth)).toBe(149.6 * (Math.pow(10,9)));
+    expect(sun.distance(earth)).toBe(149.6e9);
   });
 
   it('exerts a force on other planets', function(){
-    expect(sun.gravForceOn(earth)).toBe(3.540707528453773 * Math.pow(10,22));
+    expect(sun.gravForceOn(earth)).toBe(3.5407075284537737e22);
   });
 
 });
