@@ -1,5 +1,5 @@
 function Earth() {
-  this.position= [149.6 * (Math.pow(10,9)),0];
+  this.orbitalRadius = 149.6 * (Math.pow(10,9));
   this.mass = (5.97 * Math.pow(10,24));
   this.radius = (6371 * Math.pow(10,3));
   this.density = (this.mass/((4/3)*Math.PI*Math.pow(this.radius, 3)))
@@ -10,8 +10,8 @@ Earth.prototype.mass = function(){
   this.mass
 };
 
-Earth.prototype.position = function(){
-  this.position
+Earth.prototype.orbitalRadius = function(){
+  this.orbitalRadius
 };
 
 Earth.prototype.gravField = function(distance){
@@ -23,5 +23,5 @@ Earth.prototype.acceleration = function(sun){
 };
 
 Earth.prototype.velocity = function(sun){
-  return (Math.sqrt((this.acceleration(sun))*(this.position[0])))
+  return (Math.sqrt((this.acceleration(sun))*(this.orbitalRadius)))
 }

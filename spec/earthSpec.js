@@ -20,7 +20,7 @@ describe('Earth', function() {
   });
 
   it('instantiated with a position 149 million km away from sun', function() {
-    expect(earth.position).toEqual([149.6*(Math.pow(10,9)),0]);
+    expect(earth.orbitalRadius).toEqual(149.6*(Math.pow(10,9)));
   });
 
   it('has a gravity of 9.8 m/s^2', function() {
