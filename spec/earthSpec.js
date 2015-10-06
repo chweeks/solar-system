@@ -32,21 +32,30 @@ describe('Earth', function() {
   });
 
   it('has centripetal acceleration due to the sun', function(){
-    expect(earth.acceleration(sun).toFixed(5)).toBe ((5.93*(Math.pow(10,-3))).toFixed(5))
+    expect(earth.acceleration(sun).toFixed(5)).toBe((5.93*(Math.pow(10,-3))).toFixed(5))
   });
 
   it('has an orbital speed around the sun', function() {
     expect((earth.velocity(sun)).toFixed(0)).toBe ('29787')
   });
 
-  it('position chenges with respect to orbital angle', function(){
+  it('position changes with respect to orbital angle', function(){
      earth.orbitalAngle = ((270 * Math.PI)/180);
      expect(earth.position()).toEqual([-0, -(earth.orbitalRadius)])
+  });
+
+  it('#timePeriod calculates time of a complete orbit', function(){
+    expect((earth.timePeriod(sun)).toPrecision(4)).toBe('3.156e+7')
   });
 
   it('#addDay adds an arc day to orbit ', function(){
     earth.addDay()
     expect((earth.orbitAngle).toFixed(4)).toBe('0.0172')
+  });
+
+  it('#addMonth adds an arc month to orbit', function(){
+    earth.addMonth()
+    expect((earth.orbitAngle).toFixed(3)).toBe('0.524')
   });
 
   it('#addMonth adds an arc month to orbit', function(){

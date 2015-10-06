@@ -39,6 +39,10 @@ Earth.prototype.yCoord = function(){
   return this.orbitalRadius * (Math.sin(this.orbitalAngle))
 };
 
+Earth.prototype.timePeriod = function(sun){
+  return (2 * Math.PI * (this.orbitalRadius)/(this.velocity(sun)))
+};
+
 Earth.prototype.addDay = function(){
   return  this.orbitAngle += ((360/365.25) * (Math.PI / 180))
 };
