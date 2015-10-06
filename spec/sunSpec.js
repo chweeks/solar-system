@@ -7,6 +7,10 @@ describe('Sun', function() {
     earth = new Earth();
   });
 
+  it('instantiated at the centre of the system', function(){
+    expect(sun.position).toEqual([0,0])
+  })
+
   it('instantiated with mass of sun', function() {
     expect(sun.mass).toBe(1.99 * Math.pow(10,30));
   });
