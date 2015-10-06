@@ -23,6 +23,10 @@ describe('Earth', function() {
     expect(earth.orbitalRadius).toEqual(149.6*(Math.pow(10,9)));
   });
 
+  it('instantiated with an orbit angle of 180 degrees', function(){
+    expect(earth.orbitAngle).toBe(180)
+  })
+
   it('has a gravity of 9.8 m/s^2', function() {
     expect(((earth.gravField(earth.radius))).toFixed(1)).toBe ((9.8).toFixed(1))
   });
