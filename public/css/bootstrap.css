@@ -4,6 +4,33 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+
+#centre {
+    width: 100px;
+    height: 100px;
+
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+}
+
+#earth {
+    width: 50px;
+    height: 50px;
+
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 1200px;
+    right: 0;
+
+    margin: auto;
+}
+
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;

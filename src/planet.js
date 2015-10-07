@@ -42,6 +42,18 @@ Planet.prototype.yCoord = function(){
   return this.orbitalRadius * (Math.sin(this.orbitAngle))
 };
 
+Planet.prototype.pixelPosition = function(){
+  return [Math.round(this.xPixelCoord()),Math.round(this.yPixelCoord())]
+};
+
+Planet.prototype.xPixelCoord = function(){
+  return ((this.xCoord()) / (124.667e6))
+};
+
+Planet.prototype.yPixelCoord = function(){
+  return ((this.yCoord()) / (124.667e6))
+};
+
 Planet.prototype.timePeriod = function(sun){
   return (2 * Math.PI * (this.orbitalRadius)/(this.velocity(sun)))
 };

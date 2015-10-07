@@ -63,4 +63,9 @@ describe('Planet', function() {
     expect((earth.orbitAngle).toPrecision(2)).toBe((360 * Math.PI / 180).toPrecision(2))
   });
 
+  it('#pixelPosition converts coords to pixel equivelant', function(){
+    console.log(earth.xPixelCoord())
+    expect(earth.pixelPosition()).toEqual([1200,0])
+  });
+
 });
