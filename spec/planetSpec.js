@@ -64,7 +64,7 @@ describe('Planet', function() {
   });
 
   it('#pixelPosition converts coords to pixel equivelant', function(){
-    console.log(earth.xPixelCoord())
+    (earth.xPixelCoord())
     expect(earth.pixelPosition()).toEqual([1200,0])
   });
 
