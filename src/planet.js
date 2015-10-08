@@ -18,8 +18,8 @@ Planet.prototype.density = function(){
   return (this.mass/((4/3)*Math.PI*Math.pow(this.radius, 3)))
 };
 
-Planet.prototype.gravField = function(distance){
-  return ((this.mass)*(gravConstant))/(Math.pow(distance,2))
+Planet.prototype.gravField = function(){
+  return ((this.mass)*(gravConstant))/(Math.pow(this.radius,2))
 };
 
 Planet.prototype.acceleration = function(sun){

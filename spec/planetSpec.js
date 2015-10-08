@@ -27,6 +27,46 @@ describe('Planet', function() {
 
   });
 
+  describe('#density', function(){
+
+    it('calculates density', function() {
+      expect(Math.round(earth.density())).toBe(5511);
+    });
+
+  });
+
+  describe('acceleration', function(){
+
+    it('calculates acceleration due to the sun', function(){
+      expect(earth.acceleration(sun).toFixed(5)).toBe((5.93e-3).toFixed(5))
+    });
+
+  });
+
+  describe('#gravField', function(){
+
+    it('calculates surface gravity', function() {
+      expect(((earth.gravField(earth.radius))).toFixed(1)).toBe((9.8).toFixed(1))
+    });
+
+  });
+
+  describe('#velocity', function(){
+
+    it('calculates velocity of orbit', function(){
+      expect((earth.velocity(sun)).toFixed(0)).toBe ('29787')
+    });
+
+  });
+
+  describe('#timePeriod', function(){
+
+    it('calculates time of a complete orbit', function(){
+      expect((earth.timePeriod(sun)).toPrecision(4)).toBe('3.156e+7')
+    });
+
+  });
+
   describe('#position, #pixelPosition', function(){
 
     it('position changes with respect to orbital angle', function(){
@@ -41,39 +81,23 @@ describe('Planet', function() {
 
   });
 
-  it('#density returns correct density', function() {
-    expect(earth.density()).toBe(earth.mass/((4/3)*Math.PI*Math.pow(earth.radius, 3)));
-  });
+  describe('#add(time)', function(){
 
-  it('has a gravity of 9.8 m/s^2', function() {
-    expect(((earth.gravField(earth.radius))).toFixed(1)).toBe ((9.8).toFixed(1))
-  });
+    it('#addDay adds an arc day to orbit ', function(){
+      earth.addDay(sun)
+      expect((earth.orbitAngle).toFixed(4)).toBe('0.0172')
+    });
 
-  it('has centripetal acceleration due to the sun', function(){
-    expect(earth.acceleration(sun).toFixed(5)).toBe((5.93e-3).toFixed(5))
-  });
+    it('#addMonth adds an arc month to orbit', function(){
+      earth.addMonth(sun)
+      expect((earth.orbitAngle).toFixed(3)).toBe('0.524')
+    });
 
-  it('has an orbital speed around the sun', function() {
-    expect((earth.velocity(sun)).toFixed(0)).toBe ('29787')
-  });
+    it('#addYear adds an arc year to orbit', function(){
+      earth.addYear(sun)
+      expect((earth.orbitAngle).toPrecision(2)).toBe((360 * Math.PI / 180).toPrecision(2))
+    });
 
-  it('#timePeriod calculates time of a complete orbit', function(){
-    expect((earth.timePeriod(sun)).toPrecision(4)).toBe('3.156e+7')
-  });
-
-  it('#addDay adds an arc day to orbit ', function(){
-    earth.addDay(sun)
-    expect((earth.orbitAngle).toFixed(4)).toBe('0.0172')
-  });
-
-  it('#addMonth adds an arc month to orbit', function(){
-    earth.addMonth(sun)
-    expect((earth.orbitAngle).toFixed(3)).toBe('0.524')
-  });
-
-  it('#addYear adds an arc year to orbit', function(){
-    earth.addYear(sun)
-    expect((earth.orbitAngle).toPrecision(2)).toBe((360 * Math.PI / 180).toPrecision(2))
   });
 
 });
