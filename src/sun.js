@@ -6,10 +6,6 @@ function Sun() {
   gravConstant = 6.67e-11
 };
 
-Sun.prototype.distance = function(planet){
-  return (planet.orbitalRadius)
-};
-
 Sun.prototype.gravForceOn = function(planet){
-  return ((this.mass*planet.mass*(gravConstant))/(Math.pow(this.distance(planet),2)))
+  return ((this.mass*planet.mass*(gravConstant))/(Math.pow(planet.orbitalRadius,2)))
 };
