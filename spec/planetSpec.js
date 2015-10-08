@@ -27,6 +27,19 @@ describe('Planet', function() {
 
   });
 
+  describe('#position, #pixelPosition', function(){
+
+    it('position changes with respect to orbital angle', function(){
+       earth.orbitAngle = ((270 * Math.PI)/180);
+       expect(earth.position()).toEqual([-0, -(earth.orbitalRadius)])
+    });
+
+    it('#pixelPosition converts coords to pixel equivelant', function(){
+      (earth.xPixelCoord())
+      expect(earth.pixelPosition()).toEqual([1200,0])
+    });
+
+  });
 
   it('#density returns correct density', function() {
     expect(earth.density()).toBe(earth.mass/((4/3)*Math.PI*Math.pow(earth.radius, 3)));
@@ -42,11 +55,6 @@ describe('Planet', function() {
 
   it('has an orbital speed around the sun', function() {
     expect((earth.velocity(sun)).toFixed(0)).toBe ('29787')
-  });
-
-  it('position changes with respect to orbital angle', function(){
-     earth.orbitAngle = ((270 * Math.PI)/180);
-     expect(earth.position()).toEqual([-0, -(earth.orbitalRadius)])
   });
 
   it('#timePeriod calculates time of a complete orbit', function(){
@@ -66,11 +74,6 @@ describe('Planet', function() {
   it('#addYear adds an arc year to orbit', function(){
     earth.addYear(sun)
     expect((earth.orbitAngle).toPrecision(2)).toBe((360 * Math.PI / 180).toPrecision(2))
-  });
-
-  it('#pixelPosition converts coords to pixel equivelant', function(){
-    (earth.xPixelCoord())
-    expect(earth.pixelPosition()).toEqual([1200,0])
   });
 
 });
