@@ -7,25 +7,30 @@ describe('Planet', function() {
     sun = new Sun();
   });
 
-  it('Planet instantiated with a mass of earth', function() {
-    expect(earth.mass).toBe(5.97e24);
+  describe('Initialized', function(){
+
+    it('Planet instantiated with a mass', function() {
+      expect(earth.mass).toBe(5.97e24);
+    });
+
+    it('Planet instantiated with a radius', function() {
+      expect(earth.radius).toBe(6371e3);
+    });
+
+    it('instantiated with an orbital radius', function() {
+      expect(earth.orbitalRadius).toEqual(149.6e9);
+    });
+
+    it('instantiated with an orbit angle of 180 degrees', function(){
+      expect(earth.orbitAngle).toBe(0)
+    });
+
   });
 
-  it('Planet instantiated with radius of earth', function() {
-    expect(earth.radius).toBe(6371e3);
-  });
 
   it('#density returns correct density', function() {
     expect(earth.density()).toBe(earth.mass/((4/3)*Math.PI*Math.pow(earth.radius, 3)));
   });
-
-  it('instantiated with a position 149 million km away from sun', function() {
-    expect(earth.orbitalRadius).toEqual(149.6e9);
-  });
-
-  it('instantiated with an orbit angle of 180 degrees', function(){
-    expect(earth.orbitAngle).toBe(0)
-  })
 
   it('has a gravity of 9.8 m/s^2', function() {
     expect(((earth.gravField(earth.radius))).toFixed(1)).toBe ((9.8).toFixed(1))
