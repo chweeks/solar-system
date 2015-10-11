@@ -70,6 +70,58 @@
     margin: auto;
 }
 
+#jupiter {
+    width: 25px;
+    height: 25px;
+
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 1828px;
+    right: 0;
+
+    margin: auto;
+}
+
+#saturn {
+    width: 25px;
+    height: 25px;
+
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 1828px;
+    right: 0;
+
+    margin: auto;
+}
+
+#uranus {
+    width: 25px;
+    height: 25px;
+
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 1828px;
+    right: 0;
+
+    margin: auto;
+}
+
+#neptune {
+    width: 25px;
+    height: 25px;
+
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 1828px;
+    right: 0;
+
+    margin: auto;
+}
+
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
