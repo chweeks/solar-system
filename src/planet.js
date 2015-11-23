@@ -62,14 +62,6 @@ Planet.prototype.addDay = function(sun){
   return  this.orbitAngle += ((360/this.day(sun)) * (Math.PI / 180))
 };
 
-Planet.prototype.addMonth = function(sun){
-  return  this.orbitAngle += ((360/this.month(sun)) * (Math.PI / 180))
-};
-
-Planet.prototype.addYear = function(sun){
-  return  this.orbitAngle += ((360/this.year(sun)) * (Math.PI / 180))
-};
-
 Planet.prototype.day = function(sun){
   return this.timePeriod(sun) / (3600*24)
 };
