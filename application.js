@@ -48,42 +48,42 @@ $( document ).ready (function() {
 
   });
 
-   $( "#simYear" ).click(function( event ) {
+ $( "#simYear" ).click(function( event ) {
 
-     for(i=0; i < 365; i++){
+   for(i=0; i < 365; i++){
 
-       mercury.addDay(sun);
-       venus.addDay(sun);
-       earth.addDay(sun);
-       mars.addDay(sun);
+     mercury.addDay(sun);
+     venus.addDay(sun);
+     earth.addDay(sun);
+     mars.addDay(sun);
 
-       $("#mercury").animate({
-          bottom:  mercury.yPixelCoord()+'px',
-          left: mercury.xPixelCoord()+'px',
-          top: '0px',
-          right: '0px',
-        }, 50);
+     $("#mercury").animate({
+        bottom:  mercury.yPixelCoord()+'px',
+        left: mercury.xPixelCoord()+'px',
+        top: '0px',
+        right: '0px',
+      }, 50);
 
-        $("#venus").animate({
-           bottom:  venus.yPixelCoord()+'px',
-           left: venus.xPixelCoord()+'px',
-           top: '0px',
-           right: '0px',
-         }, 50);
+      $("#venus").animate({
+         bottom:  venus.yPixelCoord()+'px',
+         left: venus.xPixelCoord()+'px',
+         top: '0px',
+         right: '0px',
+       }, 50);
 
-       $("#earth").animate({
-          bottom: earth.yPixelCoord()+'px',
-          left: earth.xPixelCoord()+'px',
-          top: '0px',
-          right: '0px',
-        }, 50);
+     $("#earth").animate({
+        bottom: earth.yPixelCoord()+'px',
+        left: earth.xPixelCoord()+'px',
+        top: '0px',
+        right: '0px',
+      }, 50);
 
-        $("#mars").animate({
-           bottom: mars.yPixelCoord()+'px',
-           left: mars.xPixelCoord()+'px',
-           top: '0px',
-           right: '0px',
-         }, 50);
-      };
-    });
+      $("#mars").animate({
+         bottom: mars.yPixelCoord()+'px',
+         left: mars.xPixelCoord()+'px',
+         top: '0px',
+         right: '0px',
+       }, 50);
+    };
+  });
 });
